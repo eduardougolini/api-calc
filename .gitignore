@@ -1,0 +1,44 @@
+# Cache and logs (Symfony2)
+/calc_symfony/app/cache/*
+/calc_symfony/app/logs/*
+!/calc_symfony/app/cache/.gitkeep
+!/calc_symfony/app/logs/.gitkeep
+
+# Email spool folder
+/calc_symfony/app/spool/*
+
+# Cache, session files and logs (Symfony3)
+/calc_symfony/var/cache/*
+/calc_symfony/var/logs/*
+/calc_symfony/var/sessions/*
+!/calc_symfony/var/cache/.gitkeep
+!/calc_symfony/var/logs/.gitkeep
+!/calc_symfony/var/sessions/.gitkeep
+
+# Parameters
+/calc_symfony/app/config/parameters.yml
+/calc_symfony/app/config/parameters.ini
+
+# Managed by Composer
+/calc_symfony/app/bootstrap.php.cache
+/calc_symfony/var/bootstrap.php.cache
+/calc_symfony/bin/*
+!calc_symfony/bin/console
+!calc_symfony/bin/symfony_requirements
+
+# Assets and user uploads
+/calc_symfony/web/bundles/
+/calc_symfony/web/uploads/
+
+# PHPUnit
+/calc_symfony/app/phpunit.xml
+/calc_symfony/phpunit.xml
+
+# Build data
+/calc_symfony/build/
+
+# Backup entities generated with doctrine:generate:entities command
+**/Entity/*~
+
+# Embedded web-server pid file
+/calc_symfony/.web-server-pid
