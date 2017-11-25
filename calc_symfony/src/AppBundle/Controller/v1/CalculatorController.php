@@ -15,7 +15,7 @@ class CalculatorController extends Controller {
 
     /**
      * Rota responsável pela soma de valores, ela recebe um JSON
-     * com a seguinte estrutura: {"0": "valor1", "1": "valor2", "2": "valor3"}
+     * com a seguinte estrutura: {"0": "valor1", "1": "valor2"[, "2": "valor3"...]}
      * @Route("/sum")
      * @Method({"POST"})
      */
