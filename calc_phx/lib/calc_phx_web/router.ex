@@ -1,26 +1,16 @@
 defmodule CalcPhxWeb.Router do
   use CalcPhxWeb, :router
 
-  pipeline :browser do
-    plug :accepts, ["html"]
-    plug :fetch_session
-    plug :fetch_flash
-    plug :protect_from_forgery
-    plug :put_secure_browser_headers
-  end
-
   pipeline :api do
     plug :accepts, ["json"]
   end
 
-  scope "/", CalcPhxWeb do
-    pipe_through :browser # Use the default browser stack
+  scope "/api/v1", CalcPhxWeb do
+    pipe_through :api
 
-    get "/", PageController, :index
+    get "/sum/:num1/:num2",           CalculatorController, :sum
+    get "/subtract/:num1/:num2",     CalculatorController, :subtract
+    get "/divide/:dividend/:divisor", CalculatorController, :divide
+    get "/multiply/:num1/:num2",      CalculatorController, :multiply
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", CalcPhxWeb do
-  #   pipe_through :api
-  # end
 end
