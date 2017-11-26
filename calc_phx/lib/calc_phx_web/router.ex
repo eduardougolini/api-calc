@@ -19,6 +19,16 @@ defmodule CalcPhxWeb.Router do
     get "/", PageController, :index
   end
 
+  # Define um escopo(/v1) para um grupo de rotas
+  scope "/v1", CalcPhxWeb do
+    # Define que só vai aceitar requests com dados em JSON
+    pipe_through :api
+
+    # Faz a definição da rota, a maneira como ele acha o 
+    # 'CalculatorController' dentro da pasta 'v1' é um mistério
+    post "/sum", CalculatorController, :sum
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", CalcPhxWeb do
   #   pipe_through :api
