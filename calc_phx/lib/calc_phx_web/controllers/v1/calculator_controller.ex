@@ -7,7 +7,7 @@ defmodule CalcPhxWeb.CalculatorController do
     decodedJson = Poison.decode!(requestData)
 
     sumValue = Map.values(decodedJson) 
-               |> Enum.map(fn(x) -> String.to_float(x) end) 
+               |> Stream.map(fn(x) -> String.to_float(x) end) 
                |> Enum.sum
 
     json conn, %{"total" => sumValue}
