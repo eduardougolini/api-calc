@@ -20,7 +20,7 @@ defmodule CalcPhxWeb.Router do
   end
 
   # Define um escopo(/v1) para um grupo de rotas
-  scope "/v1", CalcPhxWeb do
+  scope "/api/v1", CalcPhxWeb do
     # Define que só vai aceitar requests com dados em JSON
     pipe_through :api
 
